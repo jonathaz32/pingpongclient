@@ -7,17 +7,3 @@ Setup
 
 Run
 http-server -p 8100, in root
-
-
-
-Needs
-
-- functions
-    - sign up / login (simple naive)
-    - log game between two users
-        - validation: games to 21, must be won by 2 point margin
-    - history page
-        - view history of games played
-    - leaderboard
-        - rankings are based on wins, and wins by ranks
-    - tests needed
