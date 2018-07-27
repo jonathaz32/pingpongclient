@@ -1,0 +1,51 @@
+<br/><br/>
+<h1>Hello {{userLogin}}!</h1>
+
+<br/>
+<div><u>Game Submission</u></div>
+<form>
+    <u>Opponent Played: </u>
+    <select name="selectedName" ng-model="selectedName" ng-options="x for x in opponents"></select>
+    <div></div>
+    <div><u>Fill In Score</u></div> 
+    {{userLogin}}: <input ng-model="yourScore" type="number"></input>
+    <div></div>
+    {{selectedName}}: <input ng-model="oppScore" type="number"></input>
+    <input type="submit" ng-click="addGame()">
+</form>
+<br></br>
+
+<div><u>My Games Played</u></div>
+<table>
+    <tr>
+        <td>Winner</td>
+        <td>Loser</td>
+        <td>Winner Score</td>
+        <td>Loser Score</td>
+        <td>timestamp</td>
+    </tr>
+    <tr ng-repeat="x in myGames">
+        <td>{{x.winner}}</td>
+        <td>{{x.loser}}</td>
+        <td>{{x.winnerScore}}</td>
+        <td>{{x.loserScore}}</td>
+        <td>{{x.timestamp}}</td>
+    </tr>
+</table>
+<br/>
+
+<div><u>Leaderboards</u></div>
+<table>
+    <tr>
+        <td>UserName</td>
+        <td>Win%</td>
+        <td>RankRating</td>
+    </tr>
+    <tr ng-repeat="x in pplLB | orderBy:'-rankRating'">
+        <td>{{x.userLogin}}</td>
+        <td>{{x.winPercentage*100}}%</td>
+        <td>{{x.rankRating}}</td>
+    </tr>
+</table>
+
+
